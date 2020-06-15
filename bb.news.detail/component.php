@@ -73,7 +73,7 @@ if(!$bUSER_HAVE_ACCESS)
 	return 0;
 }
 
-if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams["CACHE_GROUPS"]==="N"? false: $USER->GetGroups()),$bUSER_HAVE_ACCESS, $arNavigation, $pagerParameters)))
+if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams["CACHE_GROUPS"]==="N"? false: $USER->GetGroups()),$bUSER_HAVE_ACCESS, $arNavigation, array())))
 {
 
 	if(!Loader::includeModule("iblock"))
@@ -195,29 +195,7 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 		else
 		{
 			$navComponentParameters = array();
-			if ($arParams["PAGER_BASE_LINK_ENABLE"] === "Y")
-			{
-				$pagerBaseLink = trim($arParams["PAGER_BASE_LINK"]);
-				if ($pagerBaseLink === "")
-					$pagerBaseLink = $arResult["DETAIL_PAGE_URL"];
 
-				if ($pagerParameters && isset($pagerParameters["BASE_LINK"]))
-				{
-					$pagerBaseLink = $pagerParameters["BASE_LINK"];
-					unset($pagerParameters["BASE_LINK"]);
-				}
-
-				$navComponentParameters["BASE_LINK"] = CHTTP::urlAddParams($pagerBaseLink, $pagerParameters, array("encode"=>true));
-			}
-
-			$arResult["NAV_STRING"] = $arResult["NAV_RESULT"]->GetPageNavStringEx(
-				$navComponentObject,
-				$arParams["PAGER_TITLE"],
-				$arParams["PAGER_TEMPLATE"],
-				$arParams["PAGER_SHOW_ALWAYS"],
-				$this,
-				$navComponentParameters
-			);
 			/** @var CBitrixComponent $navComponentObject */
 			$arResult["NAV_CACHED_DATA"] = $navComponentObject->getTemplateCachedData();
 
