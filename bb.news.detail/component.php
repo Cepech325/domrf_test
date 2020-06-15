@@ -11,6 +11,12 @@ CPageOption::SetOptionString("main", "nav_page_in_session", "N");
 if(!isset($arParams["CACHE_TIME"]))
 	$arParams["CACHE_TIME"] = 36000000;
 
+$arParams["PICTURE_SCALE"] = intval($arParams["PICTURE_SCALE"]);
+if($arParams["PICTURE_SCALE"] == 0)
+{
+	$arParams["PICTURE_SCALE"] = 1;
+}
+
 $arParams["IBLOCK_TYPE"] = trim($arParams["IBLOCK_TYPE"]);
 if(strlen($arParams["IBLOCK_TYPE"])<=0)
 	$arParams["IBLOCK_TYPE"] = "news";
@@ -218,7 +224,8 @@ if($arParams["SHOW_WORKFLOW"] || $this->startResultCache(false, array(($arParams
 			Iblock\Component\Tools::IPROPERTY_ENTITY_ELEMENT,
 			'IPROPERTY_VALUES'
 		);
-
+		$arResult["PREVIEW_PICTURE"]["HEIGHT"] *= $arParams["PICTURE_SCALE"];
+		$arResult["PREVIEW_PICTURE"]["WEIGHT"] *= $arParams["PICTURE_SCALE"];
 		$arResult["FIELDS"] = array();
 		foreach($arParams["FIELD_CODE"] as $code)
 			if(array_key_exists($code, $arResult))

@@ -11,4 +11,5 @@ $MESS["MES_ELEMENT_CODE"] = "Код новости";
 $MESS["MES_ELEMENT_ID"] = "ID новости";
 $MESS["MES_CACHE_GROUPS"] = "Учитывать права доступа";
 $MESS["MES_SET_CANONICAL_URL"] = "Устанавливать канонический URL";
+$MESS["MES_PICTURE_SCALE"] = "Масштаб картинки";
 ?>

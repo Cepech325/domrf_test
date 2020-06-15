@@ -5,6 +5,7 @@ $this->setFrameMode(true);
 <div class="news-detail">
 	<?if (!is_array($arResult["DETAIL_PICTURE"]) && is_array($arResult["PREVIEW_PICTURE"]))
 		$arResult["DETAIL_PICTURE"] = $arResult["PREVIEW_PICTURE"];
+
 	if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
 		<img
 			class="detail_picture"

@@ -11,4 +11,5 @@ $MESS["MES_ELEMENT_CODE"] = "News code";
 $MESS["MES_ELEMENT_ID"] = "News ID";
 $MESS["MES_CACHE_GROUPS"] = "Respect Access Permissions";
 $MESS["MES_SET_CANONICAL_URL"] = "Set canonical URL";
+$MESS["MES_PICTURE_SCALE"] = "Picture scale";
 ?>

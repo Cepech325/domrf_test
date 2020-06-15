@@ -108,6 +108,12 @@ $arComponentParameters = array(
 			"MULTIPLE" => "Y",
 		),
 		"CACHE_TIME"  =>  array("DEFAULT"=>36000000),
+		"PICTURE_SCALE"  =>  array(
+			"PARENT" => "ADDITIONAL_SETTINGS",
+			"NAME" => GetMessage("MES_PICTURE_SCALE"),
+			"TYPE" => "STRING",
+			"DEFAULT"=>1,
+		),
 		"CACHE_GROUPS" => array(
 			"PARENT" => "CACHE_SETTINGS",
 			"NAME" => GetMessage("MES_CACHE_GROUPS"),
